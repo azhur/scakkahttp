@@ -39,7 +39,7 @@ class SlickUserRepository(val dbConfig: DatabaseConfig[JdbcProfile])
     def insertProjection = (username, address, email).mapTo[RegisterUserData]
   }
 
-  lazy val users = TableQuery[UserTable]
+  private lazy val users = TableQuery[UserTable]
   private lazy val insertQuery = users.map(_.insertProjection) returning users.map(_.id) into ((data, id) => User(id, data.username, data.address, data.email))
 
   override def registerUser(data: RegisterUserData): Future[User] = {

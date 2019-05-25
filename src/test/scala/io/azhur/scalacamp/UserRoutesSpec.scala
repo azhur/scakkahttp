@@ -12,9 +12,6 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.JdbcProfile
 import cats.implicits._
 
-import scala.concurrent.Await
-import scala.concurrent.duration.Duration
-
 class UserRoutesSpec
   extends WordSpec
     with Matchers

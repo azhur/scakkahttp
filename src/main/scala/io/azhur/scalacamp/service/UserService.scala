@@ -24,5 +24,6 @@ class UserService[F[_]](repository: UserRepository[F])
     })
   }
 
-  def getById(id: Long): F[Either[ServiceError, User]] = repository.getById(id).map(mu => Either.fromOption(mu, UserNotFound(id)))
+  def getById(id: Long): F[Either[ServiceError, User]] =
+    repository.getById(id).map(mu => Either.fromOption(mu, UserNotFound(id)))
 }

@@ -4,4 +4,3 @@ CREATE TABLE IF NOT EXISTS users (
     address VARCHAR,
     email VARCHAR NOT NULL
 );
-/*INSERT INTO users(username, address, email) VALUES('admin', 'address', 'admin@mail.com');*/
